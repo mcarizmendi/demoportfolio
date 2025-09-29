@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page1</title>
+    <link rel =  "stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+    <!-- navigation -->
+     <nav class="navbar">
+        <h1 class="logo">LOGO</h1>
+        <ul class="nav-links">
+            <li class="active">
+            <li><a href= "index.html">M.C. ARI</a></li>
+            <li><a href= "pages/page1.html">Web Design</a></li>
+            <li><a href= "pages/page2.html">Photography</a></li>
+            <li><a href= "pages/page3.html">Digital Design</a></li>
+            <li><a href= "pages/page4.html">Essay</a></li>
+      
+        </ul>
+        <img src="images/menu-btn.jpg" alt="menu button" class="menu-btn">
+     </nav>
+
+
+    <header>
+        <div class ="header-content">
+            <h2>welcome to</h2>
+            <div class ="line"></div>
+            <h1>M.C. Ari</h1>
+            <h4>Maria Cecilia Arizmendi's</h4>
+            <a href = "https://www.youtube.com/watch?v=ZdJSHEczi_0&t=1058s" class="ctn">Portfolio</a>
+        </div>
+    </header>
+    <div class="header">
+        <div class="banner">
+            <div class="slider" style="--quantity: 10">
+    
+                
+               
+                <div class="item" style="--position: 1"> <a href="https://www.good-times-media.com"><img src="images/gtlogo.png" alt=""></div> </a>
+               
+                <div class="item" style="--position: 2"> <a href="https://www.instagram.com/m.c.ari/"><img src="images/worldicon.png"></div></a>
+                <div class="item" style="--position: 3"><img src="images/eyeicon.png" alt=""></div>
+                <div class="item" style="--position: 4"><img src="images/earicon.png" alt=""></div>
+                <div class="item" style="--position: 5"><img src="images/mannequinicon.png" alt=""></div>
+                <div class="item" style="--position: 6"><img src="images/dragon_6.jpg" alt=""></div>
+                <div class="item" style="--position: 7"><img src="images/dragon_7.jpg" alt=""></div>
+                <div class="item" style="--position: 8"><img src="images/dragon_8.jpg" alt=""></div>
+                <div class="item" style="--position: 9"><img src="images/dragon_9.jpg" alt=""></div>
+                <div class="item" style="--position: 10"><img src="images/dragon_10.jpg" alt=""></div>
+            </div>
+      
+    </div>
+    <!-- first section -->
+    <section class="events">
+        <img src="images/melogo-removebg-preview.png" width="416" height="599">
+        <div class = "title">
+            <h1>Advanced Standing Portfolio:</h1>
+            <div class="line"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="images/scgt.png" alt="screenshot of good-times-media website"> 
+                <h4>Web-Design</h4>
+                <p>Check-out the projects I made in Introduction to the Web!</p>
+                <a href="pages/page1.html" class="ctn">see more</a>
+            </div>
+            <div class="col">
+                <img src="images/photography.png" alt="environmental Photography"> 
+                <h4>Photography</h4>
+                <p>See the photographs I took in intro to Digital Photography!</p>
+                <a href="pages/page2.html" class="ctn">see more</a>
+            </div>
+            <div class="col">
+                <img src="images/scposter.png" alt="preview of poster"> 
+                <h4>Digital Design</h4>
+                <p>Go straight to the work I completed in introduction to Digital design.</p>
+                <a href="pages/page3.html" class="ctn">see more</a>
+            </div>
+            <div class="col">
+                <img src="./fillerIMG.jpg" alt="black filler image"> 
+                <h4>Essays</h4>
+                <p>Read about how being a New Media Student has impacted me!</p>
+                <a href="pages/page4.html" class="ctn">here</a>
+            </div>
+     </div>
+    </section>
+    
+
+    <script>
+        // animation part for navigation bar
+        const menuBtn= document.querySelector('.menu-btn')
+        const navlinks= document.querySelector('.nav-links')
+        menuBtn.addEventListener('click',()=>{
+            navlinks.classList.toggle('mobile-menu')
+        })
+    </script>
+</body>
+</html>

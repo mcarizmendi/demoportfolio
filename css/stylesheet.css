@@ -1,0 +1,309 @@
+/* applies to all: */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+   text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.active{
+    color:#e7acc5;
+    text-decoration: underline;
+    font-weight: bold;
+}
+/* navigation */
+.navbar{
+    position: absolute;
+    top:0;
+    left:0;
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+    padding:20px;
+    color:whitesmoke;
+}
+.nav-links{
+    display:flex;
+    align-items: center;
+}
+.nav-links li{
+    margin:0 30px;
+}
+header{
+    width:100vw;
+    height:100vh;
+    background-image: url('./fillerIMG.jpg');
+    background-position: bottom;
+    background-size: cover;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.header-content{
+    margin-bottom: 150px;
+    color:whitesmoke;
+    text-align:center;
+}
+.header-content h2{
+    /* allows text to be come responsive:text increases or decreases with window size */
+    font-size: 4vmin;
+}
+.line{
+   width:150px;
+   height:4px;
+   background:#e7acc5; 
+   margin:10px auto;
+   border-radius: 5px;
+}
+.header-content h1{
+    /* between subtitle and title */
+    font-size:7vmin;
+    margin-top:30px;
+    margin-bottom: 30px;
+}
+.ctn{
+    padding: 8px 15px;
+    background:#7093b6;
+    border-radius: 30px;
+    color:whitesmoke; 
+}
+.menu-btn{
+    position: absolute;
+    top:30px;
+    right:30px;
+    width:40px;
+    cursor:pointer; 
+    /* removes menu button when full screen */
+    display: none;
+    /* when click apperar and disapear */
+
+}
+ /* section1 */
+ section{
+    width:80%;
+    margin: 80px auto;
+ }
+ .title{
+    text-align:center;
+    font-size: 4vmin;
+    color:#7093b6;
+ }
+ .row{
+    display: flex;
+    align-items: center;
+    width:100%;
+    justify-content: space-between;
+    background: #e7acc5;
+ }
+.row .col {
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+.events .row{
+    margin-top: 50px;
+}
+h4{
+    font-size: 3vmin;
+    color:#7093b6;
+    margin: 20px auto;
+}
+p{
+    color:black;
+    padding:0px 40px;
+}
+.events .ctn{
+    margin-top: 30px;
+}
+/* animation for images */
+img{
+    transition:transform .3s ease;
+}
+img:hover{
+    transform: scale(1.1);
+}
+/* for when screen becomes smaller  */
+@media only screen and (max-width:850px){
+   .menu-btn{
+    display: block;
+   }
+    .navbar{
+        padding:0px;
+    }
+    .logo{
+        position: absolute;
+        top:30px;
+        left:30px;
+    }
+    .nav-links{
+        flex-direction: column;
+        width:100%;
+        height:100vh;
+        justify-content: center;
+        background:#7093b6;
+        margin-top:-900px;
+        /* animation for navigation bar coming down */
+        transition: all 0.5s ease;
+    }
+    .mobile-menu{
+        margin-top:0px;
+        /* when navigation animation comes down can see dif shape */
+        border-bottom-right-radius: 30%;
+
+    }
+    .nav-links li{
+        margin:30px auto;
+
+    }
+}
+/* animation */
+.ctn:hover{
+    background: whitesmoke;
+    color:#7093b6;
+}
+
+
+
+
+
+
+
+
+
+
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+}
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner .content{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+.banner .content h1{
+    font-family: 'ICA Rubrik';
+    font-size: 16em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+}
+.banner .content h1::after{
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+}
+.banner .content .author{
+    font-family: Poppins;
+    text-align: right;
+    max-width: 200px;
+}
+.banner .content h2{
+    font-size: 3em;
+}
+.banner .content .model{
+    background-image: url(images/model.png);
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+}
+@media screen and (max-width: 1023px) {
+    .banner .slider{
+        width: 160px;
+        height: 200px;
+        left: calc(50% - 80px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(300px);
+    }
+    .banner .content h1{
+        text-align: center;
+        width: 100%;
+        text-shadow: 0 10px 20px #000;
+        font-size: 7em;
+    }
+    .banner .content .author{
+        color: #fff;
+        padding: 20px;
+        text-shadow: 0 10px 20px #000;
+        z-index: 2;
+        max-width: unset;
+        width: 100%;
+        text-align: center;
+        padding: 0 30px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .banner .slider{
+        width: 100px;
+        height: 150px;
+        left: calc(50% - 50px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(180px);
+    }
+    .banner .content h1{
+        font-size: 5em;
+    }
+}
